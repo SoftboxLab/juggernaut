@@ -2,10 +2,14 @@
   "name": "juggernaut",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.x",
+    "yarn": ">=1.9.x",
+    "npm": ">=6.14.x"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
-    "@mdx-js/mdx": "^1.6.22",
     "axios": "^0.21.1",
     "i18next": "^19.8.4",
     "i18next-browser-languagedetector": "^6.0.1",
@@ -24,9 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --maxWorkers=3",
     "test:coverage": "react-scripts test --watchAll=false --coverage --no-cache --logHeapUsage --silent --maxWorkers=2",
-    "lint": "eslint --ext .jsx,.js src",
-    "docs:dev": "docz dev",
-    "docs:build": "docz build"
+    "lint": "eslint --ext .jsx,.js src"
   },
   "browserslist": [
     ">0.2%",
@@ -36,11 +38,9 @@
   ],
   "devDependencies": {
     "@softboxlab/eslint-config-gandalf-lint-react": "^1.3.1",
-    "docz": "^2.3.1",
-    "docz-theme-default": "^1.2.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
-    "enzyme-to-json": "^3.6.1",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.3",
+    "@testing-library/user-event": "^12.6.0",
     "jest-styled-components": "^7.0.3"
   },
   "author": "Stanley Gomes <stanleygomesdasilva@gmail.com>",
@@ -51,10 +51,5 @@
     "Rafael Alves <rafael.alvessilva1995@gmail.com",
     "Rafael Ribeiro <faelribeirodesousa@gmail.com>",
     "Paulo Junior <paulojunioromao@gmail.com>"
-  ],
-  "jest": {
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
-  }
+  ]
 }

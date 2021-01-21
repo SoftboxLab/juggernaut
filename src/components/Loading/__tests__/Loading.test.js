@@ -1,11 +1,17 @@
-import React from 'react'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react';
+import { Container } from '../styles'
 import Loading from '..'
 
-describe('Loading', () => {
-  test('should render', () => {
-    const component = shallow(<Loading />)
+describe('[components] Loading', () => {
+  it('should render', () => {
+    const { getByRole } = render(<Loading />);
 
-    expect(component).toMatchSnapshot()
+    expect(getByRole('progressbar')).toBeVisible()
+  })
+
+  it('should render container with width 100%', () => {
+    const { container } = render(<Container />)
+
+    expect(container.firstChild).toHaveStyleRule('width', '100%')
   })
 })
